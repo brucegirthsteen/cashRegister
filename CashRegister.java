@@ -40,13 +40,11 @@ public class CashRegister{
 				int owed = convertToCents(Double.parseDouble(numbers[0]));
 				int given = convertToCents(Double.parseDouble(numbers[1]));
 				int changeNeeded = given - owed;
-				System.out.println("Owed: " + owed + " Given: " + given);
 				if (changeNeeded < 0){
 					outfile.println("Woah, hold up bud.  That is not enough money");
 					continue;
 				}
 				if ( owed % randDivisor == 0) {
-					System.out.println("owed is divisable by 3: " + owed);
 					change.getRandomChange(given - owed);
 				}
 				else{
